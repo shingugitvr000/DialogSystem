@@ -226,8 +226,13 @@ public class DialogSystem : MonoBehaviour
 
         if(dialogs[currentDialogIndex].characterPath.CompareTo("None") != 0) //None이 아닐경우 DB에 넣어놓은 경로의 캐릭터 이미지를 가져온다.
         {
+            speakers[currentSpeakerIndex].imgCharacter.gameObject.SetActive(true);
             speakers[currentSpeakerIndex].imgCharacter.sprite =
                 Resources.Load<Sprite>(dialogs[currentDialogIndex].characterPath);
+        }
+        else
+        {
+            speakers[currentSpeakerIndex].imgCharacter.gameObject.SetActive(false);
         }
 
         if (dialogs[currentDialogIndex].backGroundPath.CompareTo("None") != 0) //None이 아닐경우 DB에 넣어놓은 경로의 배경 이미지를 가져온다
